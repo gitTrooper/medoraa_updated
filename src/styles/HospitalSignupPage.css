@@ -1,0 +1,410 @@
+/* Hospital Signup - Professional Green Theme (Aligned with PatientSignup.css) */
+
+/* Main container with full-width centered form */
+.signup-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f4c3a, #1a5f5f, #2d8a8a); /* Gradient from PatientSignup */
+  padding: 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  position: relative;
+  overflow: hidden; /* Added to prevent overflow from pseudo-element */
+}
+
+/* Add subtle pattern overlay */
+.signup-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+  pointer-events: none;
+}
+
+.signup-row {
+  max-width: 500px; /* Reduced max-width for a more compact, patient-like form */
+  width: 100%;
+  border-radius: 20px; /* Consistent with PatientSignup */
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+.signup-form-container {
+  background-color: #ffffff;
+  padding: 40px 30px; /* Adjusted padding */
+  border-radius: 0; /* No border radius here, handled by signup-row */
+  box-shadow: none; /* Shadow handled by signup-row */
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Removed the ::before for signup-form-container, as it's not in PatientSignup */
+.signup-form-container::before {
+  content: none;
+}
+
+/* New header styling for consistency */
+.signup-header {
+  margin-bottom: 25px;
+}
+
+.signup-header h2 {
+  font-weight: 700;
+  font-size: 2rem; /* Consistent font size */
+  color: #1a5f5f; /* Green color for consistency */
+  margin-bottom: 8px;
+}
+
+.signup-header p {
+  font-size: 0.95rem;
+  color: #6b7280; /* Muted text color */
+  margin: 0;
+}
+
+/* Form elements */
+.signup-form input,
+.signup-form select,
+.signup-form textarea {
+  border-radius: 8px; /* Slightly smaller radius for form elements */
+  border: 1px solid #e2e8f0; /* Thinner border */
+  padding: 14px; /* Adjusted padding */
+  font-size: 1rem; /* Consistent font size */
+  transition: all 0.3s ease;
+  background: #f9fafb; /* Lighter background for inputs */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.signup-form input:focus,
+.signup-form select:focus,
+.signup-form textarea:focus {
+  border-color: #059669; /* Patient signup green focus */
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1); /* Patient signup green shadow */
+  background: white;
+  outline: none;
+}
+
+.signup-form .form-control:focus {
+  border-color: #059669;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+}
+
+.signup-form button {
+  padding: 15px 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px; /* Consistent button radius */
+  background: linear-gradient(135deg, #059669, #047857); /* Patient signup button gradient */
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: none; /* Remove uppercase */
+  letter-spacing: normal; /* Remove letter spacing */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.signup-form button:hover {
+  transform: translateY(-1px); /* Slightly less intense hover */
+  box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3); /* Patient signup button shadow */
+}
+
+.signup-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Secondary buttons - removed if not used */
+.signup-form .btn-secondary,
+.signup-form .btn-outline-primary,
+.signup-form .btn-outline-success,
+.signup-form .btn-outline-info {
+  /* No direct equivalent in PatientSignup.css for these specific styles,
+     so we'll keep the green theme but simplify */
+  color: #059669; /* Consistent green */
+  border-color: #059669; /* Consistent green */
+  background: transparent;
+  padding: 8px 15px; /* Smaller padding for sm buttons */
+  font-size: 0.875rem; /* Smaller font size */
+  border-radius: 6px;
+}
+
+.signup-form .btn-outline-primary:hover,
+.signup-form .btn-outline-success:hover,
+.signup-form .btn-outline-info:hover {
+  background: #059669;
+  border-color: #059669;
+  color: white;
+}
+
+
+/* Form labels */
+.signup-form label {
+  font-weight: 500; /* Slightly lighter font-weight */
+  color: #374151; /* Darker gray for labels */
+  margin-bottom: 6px; /* Reduced margin */
+  display: block;
+  font-size: 0.9rem; /* Smaller font size */
+}
+
+/* Alerts styling */
+.alert {
+  margin-top: 15px;
+  font-size: 0.9rem; /* Slightly smaller font size */
+  border-radius: 8px; /* Consistent radius */
+  padding: 12px 15px; /* Adjusted padding */
+  border: 1px solid; /* Thinner border */
+  border-left: 4px solid; /* Left border remains */
+}
+
+.alert-success {
+  background: #ecfdf5;
+  color: #065f46;
+  border-left-color: #34d399;
+}
+
+.alert-danger {
+  background: #fef2f2;
+  color: #b91c1c;
+  border-left-color: #f87171;
+}
+
+.alert-info {
+  background: #e0f2f7; /* Light blue, could be green if desired */
+  color: #0891b2; /* Blue, could be green if desired */
+  border-left-color: #22d3ee; /* Blue, could be green if desired */
+}
+
+.alert-warning {
+  background: #fffbeb;
+  color: #b45309;
+  border-left-color: #fbbf24;
+}
+
+/* Image preview styling */
+.signup-form img {
+  border-radius: 8px;
+  margin-top: 10px;
+  max-width: 100px;
+  max-height: 100px;
+  border: 2px solid #e2e8f0;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.signup-form img:hover {
+  transform: scale(1.03);
+  border-color: #059669; /* Green hover border */
+}
+
+/* Text alignment */
+.text-center {
+  text-align: center !important;
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 16px; /* Consistent margin */
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+/* File input styling */
+.signup-form input[type="file"] {
+  background: white;
+  border: 1px solid #d1d5db; /* Lighter border */
+  padding: 12px; /* Smaller padding */
+  text-align: left; /* Align text left */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #374151; /* Darker text */
+}
+
+.signup-form input[type="file"]:hover {
+  border-color: #059669; /* Green hover border */
+  background: #f0fdf4; /* Lighter green background */
+}
+
+/* Checkbox and radio styling */
+.signup-form .form-check-input {
+  accent-color: #059669; /* Green accent color */
+  margin-right: 8px;
+  width: 18px; /* Slightly larger */
+  height: 18px; /* Slightly larger */
+  vertical-align: middle;
+}
+
+.signup-form .form-check-label {
+  color: #4b5563; /* Darker gray for labels */
+  font-weight: 400; /* Normal font-weight */
+  font-size: 0.9rem; /* Smaller font size */
+}
+
+/* Select dropdown styling */
+.signup-form select {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23059669"><path d="M7 10l5 5 5-5z"/></svg>'); /* Green arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Adjusted position */
+  background-size: 14px; /* Smaller arrow */
+  appearance: none;
+  padding-right: 35px; /* Adjusted padding */
+}
+
+/* Textarea styling */
+.signup-form textarea {
+  resize: vertical;
+  min-height: 90px; /* Slightly smaller min-height */
+}
+
+/* Progress indicator - unchanged, looks fine */
+.signup-form .progress {
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.signup-form .progress-bar {
+  background: linear-gradient(90deg, #059669, #047857); /* Green gradient */
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+/* Loading state - unchanged, looks fine */
+.signup-form button:disabled::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .signup-container {
+    padding: 16px;
+    align-items: flex-start; /* Align to top on small screens */
+    padding-top: 40px;
+  }
+  
+  .signup-row {
+    max-width: 100%;
+    border-radius: 20px;
+  }
+  
+  .signup-form-container {
+    padding: 32px 24px; /* Adjusted padding */
+  }
+
+  .signup-header h2 {
+    font-size: 1.9rem;
+  }
+
+  .signup-form input,
+  .signup-form select,
+  .signup-form textarea {
+    padding: 12px;
+    font-size: 14px;
+  }
+  
+  .signup-form button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Additional medical-themed elements - unchanged */
+.medical-icon {
+  color: #059669; /* Green color */
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.required-field::after {
+  content: ' *';
+  color: #ef4444; /* Red for required fields */
+  font-weight: bold;
+}
+
+/* Success/Invalid states */
+.form-control.is-valid {
+  border-color: #34d399; /* Green for valid */
+}
+
+.form-control.is-invalid {
+  border-color: #f87171; /* Red for invalid */
+}
+
+/* Link styling (auth-links equivalent) */
+.auth-links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.auth-links p {
+  color: #6b7280;
+  margin: 0;
+}
+
+.auth-links a {
+  color: #059669; /* Green link color */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.auth-links a:hover {
+  color: #047857; /* Darker green on hover */
+  text-decoration: underline;
+}
+
+.white-space-pre-line {
+  white-space: pre-line;
+}
+
+/* Specific styling for the location buttons */
+.d-flex.gap-2 button.btn-outline-primary {
+    color: #059669;
+    border-color: #059669;
+}
+
+.d-flex.gap-2 button.btn-outline-primary:hover {
+    background-color: #059669;
+    color: white;
+}
+
+.d-flex.gap-2 button.btn-outline-success {
+    color: #059669;
+    border-color: #059669;
+}
+
+.d-flex.gap-2 button.btn-outline-success:disabled {
+    opacity: 0.7;
+    cursor: default;
+}
+
+/* Specific styling for the 'text-success' small tag for location */
+small.text-success {
+    color: #065f46 !important; /* Darker green for consistency */
+}

@@ -1,0 +1,154 @@
+/* Container */
+.review-container {
+  padding: 60px 20px;
+  background-color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Flex wrapper */
+.review-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Left Section */
+.review-image-section {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+}
+
+.badge {
+  background-color: #fff;
+  color: #333;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.doctor-image {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stats-box {
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+  background: #fff;
+  padding: 14px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stats-box p {
+  font-size: 14px;
+  color: #888;
+  margin: 0;
+}
+
+.stats-box h4 {
+  margin: 4px 0;
+  font-size: 18px;
+  color: #111;
+}
+
+.graph-line {
+  width: 100px;
+  height: 30px;
+  background: linear-gradient(to right, #4fd1c5, #38a169);
+  border-radius: 8px;
+  margin-top: 6px;
+}
+
+/* Right Section */
+.review-text-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.review-text-section h2 {
+  font-size: 28px;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.star-rating {
+  font-size: 20px;
+  color: #f6b400;
+  margin: 12px 0;
+}
+
+.testimonial {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.reviewer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.reviewer-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reviewer-role {
+  font-size: 13px;
+  color: #777;
+  margin: 2px 0 0 0;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #e6f7f2;
+  border-color: #28c76f;
+  color: #28c76f;
+}
+
+.nav-btn.active {
+  background-color: #28c76f;
+  color: #fff;
+  border-color: #28c76f;
+}

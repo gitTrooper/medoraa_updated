@@ -1,0 +1,359 @@
+/* Professional Medical Green Theme */
+
+.signup-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f766e, #059669);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.signup-card {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.signup-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #059669, #10b981);
+}
+
+.signup-header {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  padding: 40px 40px 30px;
+  text-align: center;
+  position: relative;
+}
+
+.signup-header::after {
+  content: '🩺';
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 24px;
+  opacity: 0.3;
+}
+
+.signup-header h2 {
+  color: #065f46;
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #059669, #047857);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.signup-subtitle {
+  color: #6b7280;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.signup-form-container {
+  padding: 48px;
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 32px;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #047857;
+  margin-bottom: 12px;
+  display: block;
+  font-size: 0.95rem;
+}
+
+.form-control, .form-select {
+  padding: 20px 24px;
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #fafafa;
+  width: 100%;
+  min-height: 58px;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #059669;
+  box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.1);
+  outline: none;
+  background: white;
+}
+
+.form-control::placeholder {
+  color: #9ca3af;
+}
+
+/* Two-column layout for form fields */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-bottom: 8px;
+}
+
+.form-row .form-group {
+  margin-bottom: 0;
+}
+
+/* Consultation Mode Checkboxes */
+.consultation-modes {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  padding: 20px;
+  background: #f0fdf4;
+  border-radius: 16px;
+  border: 2px solid #dcfce7;
+  margin-top: 12px;
+}
+
+.consultation-mode-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 12px 20px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.consultation-mode-item:hover {
+  background: rgba(5, 150, 105, 0.1);
+}
+
+.consultation-mode-item input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #059669;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.consultation-mode-item input[type="checkbox"]:checked {
+  background: #059669;
+  border-color: #059669;
+}
+
+.consultation-mode-item input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.consultation-mode-item label {
+  font-weight: 500;
+  color: #047857;
+  cursor: pointer;
+  margin: 0;
+}
+
+.selected-modes {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* Fee Fields Grid */
+.fee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-top: 12px;
+}
+
+/* Image Upload */
+.image-upload-area {
+  border: 2px dashed #d1d5db;
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  background: #fafafa;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.image-upload-area:hover {
+  border-color: #059669;
+  background: #f0fdf4;
+}
+
+.image-upload-area.has-image {
+  border-style: solid;
+  border-color: #059669;
+  background: #f0fdf4;
+}
+
+.upload-icon {
+  font-size: 32px;
+  color: #9ca3af;
+  margin-bottom: 12px;
+}
+
+.upload-text {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.image-preview {
+  margin-top: 16px;
+}
+
+.image-preview img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid #059669;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+}
+
+/* Button */
+.btn-submit {
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(135deg, #059669, #047857);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 32px;
+  min-height: 58px;
+}
+
+.btn-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3);
+}
+
+.btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Alerts */
+.alert {
+  padding: 20px 24px;
+  border-radius: 16px;
+  margin-bottom: 32px;
+  border-left: 4px solid;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.alert-danger {
+  background: #fef2f2;
+  color: #dc2626;
+  border-left-color: #ef4444;
+}
+
+.alert-success {
+  background: #f0fdf4;
+  color: #065f46;
+  border-left-color: #10b981;
+}
+
+/* Navigation Links */
+.nav-links {
+  text-align: center;
+  padding: 24px 40px;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+}
+
+.nav-links p {
+  margin-bottom: 12px;
+  color: #6b7280;
+}
+
+.nav-links a {
+  color: #059669;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #047857;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .signup-container {
+    padding: 10px;
+  }
+  
+  .signup-header, .signup-form-container {
+    padding: 24px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .consultation-modes {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .fee-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nav-links {
+    padding: 20px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .form-control, .form-select {
+    padding: 14px 16px;
+  }
+  
+  .consultation-modes {
+    padding: 12px;
+  }
+}

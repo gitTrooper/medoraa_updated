@@ -1,0 +1,60 @@
+/* PrescriptionStyles.css */
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+.prescription-paper {
+  background-color: white;
+  padding: 30px;
+  font-family: 'Segoe UI', sans-serif;
+  color: black;
+  max-width: 850px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.prescription-paper h5,
+.prescription-paper h6 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.prescription-paper hr {
+  border-top: 2px dashed #ccc;
+}
+
+.prescription-paper table {
+  font-size: 14px;
+}
+
+.prescription-paper ul {
+  padding-left: 18px;
+}
+
+.prescription-paper p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+@media print {
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .prescription-paper {
+    margin: 0 !important;
+    box-shadow: none !important;
+    page-break-after: always;
+    width: 210mm !important;
+    height: 297mm !important;
+  }
+}

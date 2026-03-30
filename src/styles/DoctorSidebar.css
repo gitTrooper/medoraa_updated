@@ -1,0 +1,30 @@
+.doctor-sidebar {
+  background-color: #ffffff;
+  border-right: 1px solid #eee;
+}
+
+.doctor-header {
+  background-color: #f8f9fa;
+}
+
+.sidebar-item {
+  font-size: 15px;
+  color: #333;
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.sidebar-item:hover {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.sidebar-item.active {
+  background-color: #4b0082;
+  color: #ffffff;
+}
+
+.sidebar-item.active:hover {
+  background-color: #4b0082;
+  color: #ffffff;
+}

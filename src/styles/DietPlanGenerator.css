@@ -1,0 +1,329 @@
+/* DietPlanGenerator.css */
+
+/* Base Styles */
+
+  /* Main Container */
+  .min-h-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #e0f2f7, #bbdefb); /* Soft blue gradient */
+    padding: 20px;
+  }
+  
+  .max-w-4xl {
+    max-width: 960px;
+    width: 100%;
+    margin: auto;
+  }
+  
+  /* Header Section */
+  .text-center {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .inline-flex {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .w-16 {
+    width: 64px;
+  }
+  
+  .h-16 {
+    height: 64px;
+  }
+  
+  .bg-green-100 {
+    background-color: #d4edda; /* Light green for icon background */
+  }
+  
+  .rounded-full {
+    border-radius: 9999px;
+  }
+  
+  .mb-4 {
+    margin-bottom: 16px;
+  }
+  
+  .text-green-600 {
+    color: #28a745; /* Green for icon */
+  }
+  
+  .text-3xl {
+    font-size: 2.25rem; /* 36px */
+  }
+  
+  .font-bold {
+    font-weight: 700;
+  }
+  
+  .text-gray-800 {
+    color: #2d3748;
+  }
+  
+  .mb-2 {
+    margin-bottom: 8px;
+  }
+  
+  .text-gray-600 {
+    color: #718096;
+  }
+  
+  /* Form and Diet Plan Card */
+  .bg-white {
+    background-color: #ffffff;
+  }
+  
+  .rounded-lg {
+    border-radius: 0.5rem; /* 8px */
+  }
+  
+  .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .p-6 {
+    padding: 1.5rem; /* 24px */
+  }
+  
+  .space-y-6 > *:not(:last-child) {
+    margin-bottom: 1.5rem; /* 24px */
+  }
+  
+  /* Section Headers */
+  .border-b {
+    border-bottom-width: 1px;
+    border-color: #e2e8f0; /* Light gray border */
+    padding-bottom: 1rem; /* 16px */
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .text-lg {
+    font-size: 1.125rem; /* 18px */
+  }
+  
+  .font-semibold {
+    font-weight: 600;
+  }
+  
+  .mr-2 {
+    margin-right: 0.5rem; /* 8px */
+  }
+  
+  .text-blue-600 {
+    color: #3182ce; /* Blue for icons */
+  }
+  
+  .text-green-600 {
+    color: #38a169; /* Green for icons */
+  }
+  
+  .text-purple-600 {
+    color: #805ad5; /* Purple for icons */
+  }
+  
+  .text-red-600 {
+    color: #e53e3e; /* Red for icons */
+  }
+  
+  .text-orange-600 {
+    color: #dd6b20; /* Orange for icons */
+  }
+  
+  /* Form Grid Layout */
+  .grid {
+    display: grid;
+  }
+  
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  .md\:grid-cols-2 {
+    /* Apply on medium screens and up */
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  .gap-4 {
+    gap: 1rem; /* 16px */
+  }
+  
+  /* Form Labels */
+  .block {
+    display: block;
+  }
+  
+  .text-sm {
+    font-size: 0.875rem; /* 14px */
+  }
+  
+  .font-medium {
+    font-weight: 500;
+  }
+  
+  .text-gray-700 {
+    color: #4a5568;
+  }
+  
+  /* Form Inputs and Selects */
+  .w-full {
+    width: 100%;
+  }
+  
+  .px-3 {
+    padding-left: 0.75rem; /* 12px */
+    padding-right: 0.75rem; /* 12px */
+  }
+  
+  .py-2 {
+    padding-top: 0.5rem; /* 8px */
+    padding-bottom: 0.5rem; /* 8px */
+  }
+  
+  .border {
+    border-width: 1px;
+  }
+  
+  .border-gray-300 {
+    border-color: #cbd5e0;
+  }
+  
+  .focus\:outline-none:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+  
+  .focus\:ring-2:focus {
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #63b3ed; /* Blue ring on focus */
+  }
+  
+  .focus\:ring-blue-500:focus {
+    border-color: #4299e1;
+  }
+  
+  /* Error Message */
+  .bg-red-50 {
+    background-color: #fef2f2;
+  }
+  
+  .border-red-200 {
+    border-color: #fecaca;
+  }
+  
+  .text-red-700 {
+    color: #c53030;
+  }
+  
+  /* Buttons */
+  .mt-6 {
+    margin-top: 1.5rem; /* 24px */
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .gap-4 > *:not(:last-child) {
+    margin-right: 1rem; /* 16px */
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  .px-6 {
+    padding-left: 1.5rem; /* 24px */
+    padding-right: 1.5rem; /* 24px */
+  }
+  
+  .py-2 {
+    padding-top: 0.5rem; /* 8px */
+    padding-bottom: 0.5rem; /* 8px */
+  }
+  
+  .bg-blue-600 {
+    background-color: #3182ce; /* Primary blue button */
+  }
+  
+  .text-white {
+    color: #ffffff;
+  }
+  
+  .hover\:bg-blue-700:hover {
+    background-color: #2b6cb0; /* Darker blue on hover */
+  }
+  
+  .transition-colors {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .disabled\:opacity-50:disabled {
+    opacity: 0.5;
+  }
+  
+  .disabled\:cursor-not-allowed:disabled {
+    cursor: not-allowed;
+  }
+  
+  .animate-spin {
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Diet Plan Display */
+  .bg-gray-50 {
+    background-color: #f7fafc; /* Light gray background for plan */
+  }
+  
+  .whitespace-pre-wrap {
+    white-space: pre-wrap;
+  }
+  
+  .font-mono {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 767px) {
+    .p-4 {
+      padding: 1rem; /* 16px */
+    }
+  
+    .text-3xl {
+      font-size: 1.875rem; /* 30px */
+    }
+  
+    .text-lg {
+      font-size: 1rem; /* 16px */
+    }
+  
+    .px-6 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+  

@@ -1,0 +1,332 @@
+/* LandingPage.css */
+/* Ensures the body is scrollable, but scrollbar is hidden */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Hero Section with teal background */
+.hero-section {
+  padding: 100px 0 80px;
+  background-color: #2c5f41;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add subtle decorative elements */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  right: 15%;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.col-md-7 {
+  flex: 0 0 58.333333%;
+  max-width: 58.333333%;
+  padding-right: 30px;
+}
+
+.col-md-5 {
+  flex: 0 0 41.666667%;
+  max-width: 41.666667%;
+}
+
+/* Typography */
+.headline h1 {
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.enhancing {
+  color: #ffa726;
+  font-weight: 800;
+}
+
+.healthcare, .access, .for, .all {
+  color: white;
+  font-weight: 700;
+}
+
+.mission-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 2rem 0 3rem;
+  max-width: 600px;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  align-items: center;
+}
+
+.contact-now {
+  background-color: #2a7373;
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  border: 2px solid #2a7373;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.contact-now:hover {
+  background-color: transparent;
+  color: #2a7373;
+  border-color: #2a7373;
+}
+
+.how-to-doctor {
+  background-color: transparent;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-weight: 500;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.how-to-doctor:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.play-icon {
+  color: #ffa726;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 167, 38, 0.2);
+  border-radius: 50%;
+}
+
+/* Heart Illustration */
+.heart-illustration {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.heart-illustration::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.heart-illustration img {
+  max-width: 90%;
+  position: relative;
+  z-index: 1;
+  filter: brightness(1.1) contrast(1.1);
+}
+
+/* Testimonial Section */
+.testimonial-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.user-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  margin-right: -15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.avatar-more {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.review h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.stars {
+  display: flex;
+  color: #ffa726;
+  font-size: 1.5rem;
+}
+
+.star {
+  margin-right: 0.25rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .headline h1 {
+    font-size: 3.5rem;
+  }
+  
+  .heart-illustration::before {
+    width: 400px;
+    height: 400px;
+  }
+  
+  .col-md-7 {
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-md-7, .col-md-5 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-right: 0;
+  }
+  
+  .headline h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  
+  .hero-content {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  
+  .mission-text {
+    text-align: center;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .contact-now, .how-to-doctor {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+  
+  .heart-illustration {
+    margin-top: 2rem;
+  }
+  
+  .heart-illustration::before {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .testimonial-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .hero-section {
+    padding: 80px 0 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .headline h1 {
+    font-size: 2.5rem;
+  }
+  
+  .mission-text {
+    font-size: 1rem;
+  }
+  
+  .cta-buttons {
+    gap: 0.8rem;
+  }
+  
+  .contact-now, .how-to-doctor {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+  }
+}

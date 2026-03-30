@@ -1,0 +1,244 @@
+/* Doctor Sidebar Specific Styles - Healthcare Theme (Non-Breaking) */
+/* Override inline styles while maintaining functionality */
+
+.doctor-sidebar-container {
+  background: linear-gradient(180deg, #00796b 0%, #004d40 100%) !important;
+  box-shadow: 2px 0 12px rgba(0, 121, 107, 0.3) !important;
+  border-right: 1px solid #00695c !important;
+}
+
+/* Ensure sidebar nav is not affected by global nav styles */
+.doctor-sidebar-container .doctor-sidebar-nav {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  backdrop-filter: none !important;
+  position: static !important;
+  z-index: auto !important;
+}
+
+.doctor-sidebar-header {
+  position: relative;
+}
+
+.doctor-profile-image-container {
+  border: 3px solid #4db6ac !important;
+  box-shadow: 0 4px 12px rgba(77, 182, 172, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.doctor-profile-image-container:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 6px 16px rgba(77, 182, 172, 0.4) !important;
+  border-color: #26a69a !important;
+}
+
+.doctor-name {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.doctor-specialization {
+  color: #b2dfdb !important;
+  opacity: 0.9 !important;
+}
+
+.doctor-profile-dropdown {
+  background: linear-gradient(135deg, #00796b 0%, #004d40 100%) !important;
+  border: 1px solid #4db6ac !important;
+  box-shadow: 0 8px 24px rgba(0, 121, 107, 0.4) !important;
+}
+
+.doctor-edit-btn {
+  background-color: #4db6ac !important;
+  color: #00695c !important;
+  border-color: #4db6ac !important;
+  font-weight: 600 !important;
+}
+
+.doctor-edit-btn:hover {
+  background-color: #26a69a !important;
+  color: #ffffff !important;
+  border-color: #26a69a !important;
+  transform: translateY(-1px) !important;
+}
+
+.doctor-logout-btn {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #ffcdd2 !important;
+  border-color: #ffcdd2 !important;
+}
+
+.doctor-logout-btn:hover {
+  background-color: #d32f2f !important;
+  border-color: #d32f2f !important;
+  color: #ffffff !important;
+}
+
+.doctor-nav-button {
+  color: #b2dfdb !important;
+  background-color: transparent !important;
+  border: none !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+}
+
+.doctor-nav-button::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background-color: #4db6ac;
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.doctor-nav-button:hover {
+  background-color: rgba(77, 182, 172, 0.2) !important;
+  color: #ffffff !important;
+  transform: translateX(4px) !important;
+}
+
+.doctor-nav-button:hover::before {
+  transform: scaleY(1);
+}
+
+.doctor-nav-button.doctor-nav-active {
+  background: linear-gradient(135deg, #4db6ac 0%, #26a69a 100%) !important;
+  color: #00695c !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(77, 182, 172, 0.4) !important;
+}
+
+.doctor-nav-button.doctor-nav-active::before {
+  transform: scaleY(1);
+  background-color: #00695c;
+}
+
+.doctor-nav-button.doctor-nav-active:hover {
+  background: linear-gradient(135deg, #26a69a 0%, #00897b 100%) !important;
+  color: #ffffff !important;
+  transform: translateX(0) !important;
+}
+
+/* Icon styling for nav buttons */
+.doctor-nav-button svg,
+.doctor-nav-button i {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.doctor-nav-button:hover svg,
+.doctor-nav-button:hover i,
+.doctor-nav-button.doctor-nav-active svg,
+.doctor-nav-button.doctor-nav-active i {
+  opacity: 1;
+}
+
+.doctor-image-modal {
+  background-color: rgba(0, 105, 92, 0.8) !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+.doctor-modal-content {
+  background: linear-gradient(135deg, #00796b 0%, #004d40 100%) !important;
+  box-shadow: 0 20px 40px rgba(0, 121, 107, 0.5) !important;
+  border: 1px solid #4db6ac !important;
+}
+
+.doctor-modal-close {
+  background: #4db6ac !important;
+  color: #00695c !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: bold !important;
+  transition: all 0.3s ease !important;
+}
+
+.doctor-modal-close:hover {
+  background: #26a69a !important;
+  color: #ffffff !important;
+  transform: scale(1.1) !important;
+}
+
+.doctor-zoomed-image {
+  border: 2px solid #4db6ac !important;
+  border-radius: 8px !important;
+}
+
+/* Additional theme enhancements */
+.doctor-sidebar-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4db6ac 0%, #26a69a 50%, #4db6ac 100%);
+  z-index: 1;
+}
+
+/* Scrollbar styling */
+.doctor-sidebar-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.doctor-sidebar-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.doctor-sidebar-container::-webkit-scrollbar-thumb {
+  background: #4db6ac;
+  border-radius: 3px;
+}
+
+.doctor-sidebar-container::-webkit-scrollbar-thumb:hover {
+  background: #26a69a;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .doctor-sidebar-container {
+    width: 260px !important;
+  }
+}
+
+/* Text color overrides for better theming */
+.doctor-sidebar-container .text-light {
+  color: #b2dfdb !important;
+}
+
+.doctor-sidebar-container .text-primary {
+  color: #4db6ac !important;
+}
+
+/* Button focus states */
+.doctor-nav-button:focus,
+.doctor-edit-btn:focus,
+.doctor-logout-btn:focus {
+  box-shadow: 0 0 0 3px rgba(77, 182, 172, 0.3) !important;
+  outline: none !important;
+}
+
+/* Enhance the profile section */
+
+
+/* Animation for smooth transitions */
+.doctor-sidebar-container * {
+  transition: all 0.3s ease !important;
+}
+
+/* Hover effects for the entire sidebar */
+.doctor-sidebar-container:hover::before {
+  background: linear-gradient(90deg, #26a69a 0%, #4db6ac 50%, #26a69a 100%);
+}

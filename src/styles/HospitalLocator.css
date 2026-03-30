@@ -1,0 +1,244 @@
+/* Base setup */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8fafc;
+}
+
+/* Container */
+.hospital-locator-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Header */
+.hospital-locator-container h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Range Selector */
+.range-selector {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.range-selector h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #334155;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.range-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.range-options label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #334155;
+  transition: 0.3s ease all;
+}
+
+.range-options input[type="radio"] {
+  margin-right: 0.5rem;
+  accent-color: #2563eb;
+}
+
+.range-options label:hover {
+  background: #e0f2fe;
+  border-color: #0ea5e9;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
+}
+
+.range-options input[type="radio"]:checked + label,
+.range-options label:has(input[type="radio"]:checked) {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  border-color: #2563eb;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+/* Search Button */
+.search-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #059669, #047857);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+
+.search-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #047857, #065f46);
+  transform: translateY(-2px);
+}
+
+.search-btn:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+}
+
+/* Header Section (after range selected) */
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header-section h2 {
+  font-size: 2rem;
+  color: #1e293b;
+  margin: 0;
+}
+
+/* Back Button */
+.back-btn {
+  padding: 0.75rem 1.25rem;
+  background: #f1f5f9;
+  color: #475569;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #e2e8f0;
+  transform: translateY(-1px);
+}
+
+/* Hospital Cards Grid */
+.hospital-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Hospital Card */
+.hospital-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.hospital-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.hospital-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+.hospital-card p {
+  font-size: 0.95rem;
+  color: #475569;
+  margin-bottom: 0.5rem;
+}
+
+.hospital-card p strong {
+  color: #1e293b;
+}
+
+/* View on Map Button */
+.hospital-card button {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.hospital-card button:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+}
+
+/* Empty or Loading State */
+.hospital-locator-container > p {
+  text-align: center;
+  font-size: 1rem;
+  color: #64748b;
+  padding: 2rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .header-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hospital-cards {
+    grid-template-columns: 1fr;
+  }
+}
+.hospital-card button {
+  width: 100%;
+  padding: 0.875rem;
+  background: linear-gradient(135deg, #059669, #10b981); /* teal-green gradient */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.hospital-card button:hover {
+  background: linear-gradient(135deg, #047857, #059669); /* darker teal on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(5, 150, 105, 0.4);
+}

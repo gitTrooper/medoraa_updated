@@ -1,0 +1,610 @@
+/* Patient Signup - Professional Green Theme */
+
+/* Main container with full-width centered form */
+.signup-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f4c3a, #1a5f5f, #2d8a8a);
+  padding: 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  position: relative;
+}
+
+/* Add subtle pattern overlay */
+.signup-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+  pointer-events: none;
+}
+
+/* Centered form card */
+.signup-row {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 24px;
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+/* Green accent bar at top */
+.signup-row::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #059669, #10b981, #34d399);
+}
+
+/* Form container */
+.signup-form-container {
+  padding: 50px 40px;
+}
+
+.signup-form {
+  width: 100%;
+}
+
+/* Header styling */
+.signup-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.signup-header h2 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #064e3b;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #064e3b, #059669);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.signup-header p {
+  color: #6b7280;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Form inputs */
+.signup-form input,
+.signup-form select,
+.signup-form textarea {
+  width: 100%;
+  padding: 16px 18px;
+  margin: 12px 0;
+  border: 2px solid #e5e7eb;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 400;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #fafafa;
+  color: #1f2937;
+}
+
+.signup-form input:focus,
+.signup-form select:focus,
+.signup-form textarea:focus {
+  border-color: #10b981;
+  background: white;
+  box-shadow: 
+    0 0 0 4px rgba(16, 185, 129, 0.08),
+    0 2px 8px rgba(16, 185, 129, 0.12);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.signup-form input::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #064e3b;
+  margin-bottom: 8px;
+  display: block;
+  font-size: 0.95rem;
+}
+
+/* Button styling */
+.btn {
+  padding: 16px 32px;
+  border-radius: 14px;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: white;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+  background: linear-gradient(135deg, #047857, #059669);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading state */
+.btn-primary:disabled::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Alert styling */
+.alert {
+  margin-bottom: 24px;
+  border-radius: 12px;
+  padding: 16px 20px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.alert-success {
+  background: rgba(16, 185, 129, 0.1);
+  color: #047857;
+  border-left: 4px solid #10b981;
+}
+
+.alert-danger {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border-left: 4px solid #ef4444;
+}
+
+/* Professional Profile Image Upload */
+.profile-upload-container {
+  margin: 20px 0;
+}
+
+.profile-upload-label {
+  display: block;
+  font-weight: 600;
+  color: #064e3b;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.profile-upload-section {
+  background: #fafafa;
+  border: 2px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.profile-upload-section:hover {
+  border-color: #10b981;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.08);
+}
+
+.profile-upload-section.has-image {
+  border-color: #10b981;
+  background: white;
+}
+
+/* Upload area styling */
+.upload-dropzone {
+  padding: 32px 24px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.upload-dropzone:hover {
+  background: rgba(16, 185, 129, 0.02);
+}
+
+.upload-dropzone.drag-over {
+  background: rgba(16, 185, 129, 0.05);
+  border-color: #10b981;
+}
+
+/* Upload icon */
+.upload-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+}
+
+.upload-text {
+  margin: 0;
+  color: #374151;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.upload-subtext {
+  margin: 8px 0 0 0;
+  color: #6b7280;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.upload-subtext .file-types {
+  color: #059669;
+  font-weight: 500;
+}
+
+/* Hidden file input */
+.profile-file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Image preview section */
+.image-preview-section {
+  border-top: 1px solid #e5e7eb;
+  padding: 24px;
+  background: white;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.preview-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.preview-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.preview-filename {
+  font-weight: 500;
+  color: #1f2937;
+  font-size: 0.95rem;
+  margin: 0 0 4px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.preview-details {
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.preview-success {
+  color: #059669;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Change/Remove buttons */
+.preview-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-change,
+.btn-remove {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-change {
+  background: white;
+  color: #059669;
+  border-color: #059669;
+}
+
+.btn-change:hover {
+  background: #059669;
+  color: white;
+}
+
+.btn-remove {
+  background: white;
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+.btn-remove:hover {
+  background: #fef2f2;
+  border-color: #dc2626;
+}
+
+/* Loading state for image upload */
+.upload-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.upload-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #e5e7eb;
+  border-top: 3px solid #10b981;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 12px;
+}
+
+.upload-loading-text {
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Navigation links */
+.auth-links {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.auth-links p {
+  color: #6b7280;
+  margin: 0;
+}
+
+.auth-links a {
+  color: #059669;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.auth-links a:hover {
+  color: #047857;
+  text-decoration: underline;
+}
+
+/* Two-column layout for name fields */
+.name-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .signup-container {
+    padding: 16px;
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+  
+  .signup-row {
+    max-width: 100%;
+    border-radius: 20px;
+  }
+  
+  .signup-form-container {
+    padding: 32px 24px;
+  }
+
+  .signup-header h2 {
+    font-size: 1.9rem;
+  }
+
+  .name-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-container {
+    padding: 12px;
+    padding-top: 20px;
+  }
+  
+  .signup-form-container {
+    padding: 24px 20px;
+  }
+  
+  .signup-form input,
+  .signup-form select,
+  .signup-form textarea {
+    padding: 14px 16px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .btn {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+
+  .signup-header {
+    margin-bottom: 32px;
+  }
+
+  .signup-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .terms-checkbox-container {
+    padding: 10px 0;
+  }
+
+  
+  .terms-checkbox-container .form-check-label {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .terms-checkbox-container .form-check-input {
+    margin-top: 2px;
+  }
+
+
+}
+
+/* Focus visible for accessibility */
+.btn:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #059669;
+  outline-offset: 2px;
+}
+/* Fix default checkbox styles if overridden */
+.terms-checkbox-container {
+  margin: 1.5rem 0;
+}
+
+.custom-checkbox-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.custom-checkbox-input {
+  display: none;
+}
+
+.custom-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--dashboard-text, #333);
+}
+
+.checkbox-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--dashboard-primary, #007bff);
+  border-radius: 4px;
+  background-color: white;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.custom-checkbox-input:checked + .custom-checkbox-label .checkbox-indicator {
+  background-color: var(--dashboard-primary, #007bff);
+  border-color: var(--dashboard-primary, #007bff);
+}
+
+.custom-checkbox-input:focus + .custom-checkbox-label .checkbox-indicator {
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.custom-checkbox-label:hover .checkbox-indicator {
+  border-color: var(--dashboard-dark, #0056b3);
+}
+
+.checkbox-text {
+  flex: 1;
+}
+
+.terms-link {
+  color: var(--dashboard-primary, #007bff) !important;
+  text-decoration: underline !important;
+  font-weight: 500 !important;
+}
+
+.terms-link:hover {
+  color: var(--dashboard-dark, #0056b3) !important;
+  text-decoration: underline !important;
+}

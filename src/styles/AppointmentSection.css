@@ -1,0 +1,139 @@
+/* AppointmentSection.css */
+
+.appointment-section {
+  padding: 1.5rem;
+  background: #f8f9fc;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.appointment-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #2b2d42;
+  border-left: 5px solid #5e60ce;
+  padding-left: 0.75rem;
+}
+
+.empty-state {
+  text-align: center;
+  font-size: 1rem;
+  color: #6c757d;
+  padding: 2rem 0;
+}
+
+.appointments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.2rem;
+}
+
+.appointment-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out;
+}
+
+.appointment-card:hover {
+  transform: translateY(-5px);
+}
+
+.appointment-card-body {
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.patient-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.patient-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.patient-phone {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #555;
+}
+
+.appointment-datetime {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.appointment-date, .appointment-time {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.badges-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.consultation-badge {
+  background-color: #e0f7fa;
+  color: #00796b;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 15px;
+  font-weight: 500;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 15px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status-badge.completed {
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+
+.status-badge.pending {
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+.prescription-btn {
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 0.55rem;
+  background-color: #5e60ce;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.prescription-btn:hover:enabled {
+  background-color: #4d4fc1;
+}
+
+.prescription-btn:disabled {
+  background-color: #adb5bd;
+  cursor: not-allowed;
+}
