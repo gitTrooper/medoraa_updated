@@ -5,7 +5,7 @@ const cors = require('cors');
 const app = express();
 
 const PORT = 3001;
-const GOOGLE_API_KEY = 'AIzaSyD7ZdNKcnNMS69Ny3QmJFTozeU-gGJYGqg';
+const GOOGLE_API_KEY = 'AIzaSyC1Fog4H1KupnRVb2xOT7Rej_2eOnGl5jk';
 
 app.use(cors());
 
