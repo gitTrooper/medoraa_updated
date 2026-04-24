@@ -30,13 +30,18 @@ const BookAppointment = () => {
   const [filteredTimes, setFilteredTimes] = useState([]);
   const [bookedSlots, setBookedSlots] = useState([]);
   
-  // New state for consultation fees and doctor name
+  // State for consultation fees, doctor name and address
   const [consultationFees, setConsultationFees] = useState({
     followUpFees: 0,
     generalCheckupFees: 0,
     specialistFees: 0
   });
   const [doctorName, setDoctorName] = useState("Doctor");
+  const [doctorAddress, setDoctorAddress] = useState({
+    clinicAddress: "",
+    city: "",
+    state: ""
+  });
   const [feesLoading, setFeesLoading] = useState(true);
 
   useEffect(() => {
@@ -47,7 +52,7 @@ const BookAppointment = () => {
     return () => unsubscribe();
   }, [navigate]);
 
-  // Fetch consultation fees and doctor name from database
+  // Fetch consultation fees, doctor name and address from database
   useEffect(() => {
     const fetchDoctorData = async () => {
       if (!doctorId) return;
@@ -72,25 +77,33 @@ const BookAppointment = () => {
           const lastName = data.lastName || "";
           const fullName = `${firstName} ${lastName}`.trim() || "Doctor";
           setDoctorName(fullName);
+
+          // Set doctor address
+          setDoctorAddress({
+            clinicAddress: data.clinicAddress || "",
+            city: data.city || "",
+            state: data.state || ""
+          });
+
         } else {
           console.warn("Doctor document not found");
-          // Set default values if document doesn't exist
           setConsultationFees({
             followUpFees: 300,
             generalCheckupFees: 500,
             specialistFees: 1000
           });
           setDoctorName("Doctor");
+          setDoctorAddress({ clinicAddress: "", city: "", state: "" });
         }
       } catch (error) {
         console.error("Error fetching doctor data:", error);
-        // Set default values on error
         setConsultationFees({
           followUpFees: 300,
           generalCheckupFees: 500,
           specialistFees: 1000
         });
         setDoctorName("Doctor");
+        setDoctorAddress({ clinicAddress: "", city: "", state: "" });
       } finally {
         setFeesLoading(false);
       }
@@ -198,6 +211,16 @@ const BookAppointment = () => {
     });
   };
 
+  // Build full address string
+  const getFullAddress = () => {
+    const parts = [
+      doctorAddress.clinicAddress,
+      doctorAddress.city,
+      doctorAddress.state
+    ].filter(Boolean);
+    return parts.join(", ");
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
@@ -215,8 +238,8 @@ const BookAppointment = () => {
           appointmentDate: formData.appointmentDate,
           appointmentTime: formData.appointmentTime,
           consultationType: formData.consultationType,
-          appointmentType, // Added appointment type (inPerson or videoCall)
-          mode: appointmentType, // Added explicit mode field for clarity
+          appointmentType,
+          mode: appointmentType,
           doctorEmail,
           specialization,
           city,
@@ -240,7 +263,7 @@ const BookAppointment = () => {
         <div className="book-app-container">
           <div className="book-app-left">
             <div>
-              <h1 className="book-app-brand">MediVeda</h1>
+              <h1 className="book-app-brand">Medoraa</h1>
               <p style={{ opacity: 0.8, fontSize: '1.1rem', marginTop: '10px' }}>
                 Book your appointment with trusted healthcare professionals
               </p>
@@ -256,6 +279,21 @@ const BookAppointment = () => {
                 <p style={{ fontSize: '0.95rem', opacity: '0.8' }}>
                   {city} • Hospital ID: {hospitalId}
                 </p>
+
+                {/* ✅ Doctor Clinic Address */}
+                {getFullAddress() && (
+                  <p style={{
+                    fontSize: '0.9rem',
+                    opacity: '0.85',
+                    marginTop: '10px',
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '6px'
+                  }}>
+                    <span>📍</span>
+                    <span>{getFullAddress()}</span>
+                  </p>
+                )}
               </div>
             </div>
           </div>
