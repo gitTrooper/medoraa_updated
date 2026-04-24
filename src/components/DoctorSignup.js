@@ -3,7 +3,7 @@ import { auth, db } from "../firebase";
 import { 
   createUserWithEmailAndPassword, 
   sendEmailVerification,
-  signOut  // Add this import
+  signOut
 } from "firebase/auth"; 
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate, Link } from "react-router-dom";
@@ -25,6 +25,9 @@ const DoctorSignup = () => {
     intro: "",
     qualification: "",
     consultationMode: [],
+    clinicAddress: "",
+    city: "",
+    state: ""
   });
 
   const [selectedImage, setSelectedImage] = useState(null);
@@ -144,7 +147,6 @@ const DoctorSignup = () => {
         ipAddress: null,
         userAgent: navigator.userAgent,
         submissionSource: "signup_form",
-        consultationMode: userData.consultationMode
       };
 
       await setDoc(doc(db, 'tempDoctorSignups', adminRequestData.requestId), adminRequestData);
@@ -159,15 +161,17 @@ const DoctorSignup = () => {
     const {
       firstName, lastName, email, password, specialization,
       licenseNumber, experience, followUpFees, generalCheckupFees,
-      specialistFees, qualification, consultationMode
+      specialistFees, qualification, consultationMode,
+      clinicAddress, city, state
     } = formData;
 
     if (
       !firstName || !lastName || !specialization || !licenseNumber || 
       !experience || !followUpFees || !generalCheckupFees || 
-      !specialistFees || !qualification || !consultationMode
+      !specialistFees || !qualification || 
+      !clinicAddress || !city || !state
     ) {
-      setError('All fields including fee details are required');
+      setError('All fields including address details are required');
       return false;
     }
 
@@ -268,7 +272,10 @@ Please save your Request ID for tracking purposes.`);
         specialistFees: "",
         intro: "",
         qualification: "",
-        consultationMode: []
+        consultationMode: [],
+        clinicAddress: "",
+        city: "",
+        state: ""
       });
       setSelectedImage(null);
       setImagePreview(null);
@@ -491,6 +498,42 @@ Please save your Request ID for tracking purposes.`);
                 onChange={handleChange}
                 required
               />
+            </div>
+
+            {/* Address Details */}
+            <div className="form-group">
+              <Form.Label>Clinic Address*</Form.Label>
+              <Form.Control
+                type="text"
+                name="clinicAddress"
+                placeholder="Clinic Address (Street, Area, Landmark)*"
+                value={formData.clinicAddress}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="form-row">
+              <div className="form-group">
+                <Form.Control
+                  type="text"
+                  name="city"
+                  placeholder="City*"
+                  value={formData.city}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <Form.Control
+                  type="text"
+                  name="state"
+                  placeholder="State*"
+                  value={formData.state}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
             </div>
 
             {/* Image Upload */}
